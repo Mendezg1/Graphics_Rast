@@ -292,10 +292,12 @@ def normalMapShader(**kwargs):
             bitangent = producto_cruz(normal, tangent)
             bitangent = normalizar(bitangent)
             
+            tangent = producto_cruz(normal, bitangent)
+            
             matriz_tang = [
-                [0,0,normal[0]],
-                [0,0,normal[1]],
-                [0,0,normal[2]]
+                [tangent[0],bitangent[0],normal[0]],
+                [tangent[1],bitangent[1],normal[1]],
+                [tangent[2],bitangent[2],normal[2]]
             ]
             
             texNormal = vectbymat(texNormal, matriz_tang)

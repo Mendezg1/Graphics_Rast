@@ -10,38 +10,38 @@ height = 1080
 rend = Renderer(width,height)
 
 rend.fragmentShader = shaders.flatShader
-rend.vertexShader = shaders.vertexShader
+rend.vertexShader = shaders.alteredVertexShader
 rend.glLoadModel(filename="ovni.obj", textname="Ufo.bmp", 
                 translate=(7,3,-15), rotate=(0,45,0), scale=(0.8,0.8,0.8), light=(0,0,1))
 rend.glRender()
 
-# rend.vertexShader = shaders.vertexShader
-# rend.fragmentShader = shaders.normalMapShader
+rend.vertexShader = shaders.vertexShader
+rend.fragmentShader = shaders.normalMapShader
 rend.glLoadModel(filename="barn.obj", textname="barn.bmp", normal = "normalbarn.bmp",
                 translate=(-2,-3,-20), rotate=(0,0,0), scale=(0.0061,0.0061,0.0061), light=(0,0,1))
 rend.glRender()
-# rend.vertexShader = shaders.vertexShader
-# rend.fragmentShader = shaders.dirtyShader
+rend.vertexShader = shaders.vertexShader
+rend.fragmentShader = shaders.dirtyShader
 rend.glLoadModel(filename="casita.obj", textname="house2.bmp", 
                 translate=(-6,-3,-10), rotate=(0,50,0), scale=(0.27,0.27,0.27))
 rend.glRender()
 
 
 
-# rend.fragmentShader = shaders.NegativeShader
+rend.fragmentShader = shaders.NegativeShader
 
 rend.glLoadModel(filename="scarecrow.obj", textname="scarecrow.bmp", 
                 translate=(-1,-5,-11), rotate=(0,0,0), scale=(0.7,0.7,0.7), light=(0,0,1))
 rend.glRender()
 
-# rend.fragmentShader = shaders.AlphaClipping_NoAlpha
+rend.fragmentShader = shaders.AlphaClipping_NoAlpha
 rend.glLoadModel(filename="vaca.obj", textname="vaca.bmp", 
                 translate=(7,-3,-15), rotate=(0,135,0), scale=(0.40,0.40,0.40))
 rend.glRender()
 
 
 
-rend.glFinish("sinshaders.bmp")
+rend.glFinish("conshaders.bmp")
 
 def shotMedium():
     rend.glLoadModel(filename="kitty_001.obj", textname="text.bmp", 
